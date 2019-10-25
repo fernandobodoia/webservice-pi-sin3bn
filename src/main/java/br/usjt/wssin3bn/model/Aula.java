@@ -32,7 +32,6 @@ public class Aula {
 		this.presenca = presenca;
 	}
 
-	@NotBlank
 	private boolean presenca;
 	
 	public Aula(){
