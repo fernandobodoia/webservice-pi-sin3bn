@@ -19,8 +19,18 @@ public class TurmaService {
 	}
 
 
-	public List <Turma> findAll() {
+	/*public List <Turma> findAll() {
+		return turmaRepo.findAll();
+	}*/
+	
+	public Turma save(Turma turma) {
+		return turmaRepo.save(turma);
+	}
+	
+	public List<Turma> listar() {
 		return turmaRepo.findAll();
 	}
+	
+
 	
 }

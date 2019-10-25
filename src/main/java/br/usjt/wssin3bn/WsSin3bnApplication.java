@@ -11,3 +11,4 @@ public class WsSin3bnApplication {
 	}
 
 }
+ 

@@ -33,7 +33,7 @@ public class Aluno {
 		
 	}
 	
-	public Aluno(Long ra, String nome, String email, String senha, Turma turma) {
+	public Aluno(Long ra, String nome, String email, String senha) {
 		this.ra = ra;
 		this.nome = nome;
 	}

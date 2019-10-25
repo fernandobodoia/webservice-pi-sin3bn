@@ -1,5 +1,7 @@
 package br.usjt.wssin3bn.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,4 +34,11 @@ public class AlunoService {
 		return alunoRepo.findOneById(id);
 	}
 
+	public Aluno save(Aluno aluno) {
+		return alunoRepo.save(aluno);
+	}
+	
+	public List<Aluno> listar() {
+		return alunoRepo.findAll();
+	}
 }

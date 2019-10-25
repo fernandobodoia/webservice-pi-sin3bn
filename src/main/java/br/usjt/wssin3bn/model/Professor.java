@@ -13,32 +13,29 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Table(name = "professor")
 public class Professor {
-	
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
 	@NotBlank
 	String nome;
-	
+
 	@NotBlank
 	@Email
 	String email;
-	
+
 	@NotBlank
 	String senha;
-	
-	ArrayList<Turma> turmas = new ArrayList<Turma>(); 
-	
-	public Professor(){
-		
+
+	public Professor() {
+
 	}
-	
-	public Professor(String nome, String email, String senha,  ArrayList<Turma> turmas){
+
+	public Professor(String nome, String email, String senha) {
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
-		this.turmas = turmas;
 	}
 
 	public String getNome() {
@@ -63,14 +60,6 @@ public class Professor {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-
-	public ArrayList<Turma> getTurmas() {
-		return turmas;
-	}
-
-	public void setTurmas(ArrayList<Turma> turmas) {
-		this.turmas = turmas;
 	}
 
 }

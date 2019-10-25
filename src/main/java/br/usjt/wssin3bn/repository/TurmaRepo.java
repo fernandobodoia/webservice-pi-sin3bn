@@ -14,5 +14,5 @@ public interface TurmaRepo extends JpaRepository< Turma, Long> {
 	
 	public List<Turma> findAll();
 	
-
+	public Turma save(Turma turma);
 }
