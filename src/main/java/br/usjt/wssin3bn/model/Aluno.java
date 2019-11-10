@@ -1,10 +1,13 @@
 package br.usjt.wssin3bn.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -21,21 +24,36 @@ public class Aluno {
 	
 	private String nome;
     
-    @NotBlank
+    public Turma getTurma() {
+		return turma;
+	}
+
+	public void setTurma(Turma turma) {
+		this.turma = turma;
+	}
+
+	@NotBlank
     private String senha;
 
     @NotBlank
     @Column(unique = true)
     @Email
     private String email;
-	
+    
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "turma")
+    private Turma turma;
+    
 	public Aluno() {
 		
 	}
 	
-	public Aluno(Long ra, String nome, String email, String senha) {
+	public Aluno(Long ra, String nome, String email, String senha, Turma turma) {
 		this.ra = ra;
 		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		this.turma = turma;
 	}
 
 	public Long getId() {

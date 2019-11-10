@@ -1,9 +1,11 @@
 package br.usjt.wssin3bn.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -30,6 +32,9 @@ public class Turma {
 		this.nome = nome;
 	}
 	private String nome;
+	
+	//@OneToMany(mappedBy = "aluno", cascade = CascadeType.ALL)
+	//private Aluno aluno;
 	
 	public Turma() {
 		

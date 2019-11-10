@@ -15,6 +15,8 @@ public class Aula {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+	
+	private boolean presenca;
     
     public Long getId() {
 		return id;
@@ -31,8 +33,12 @@ public class Aula {
 	public void setPresenca(boolean presenca) {
 		this.presenca = presenca;
 	}
+	
+	public boolean getPresenca() {
+		return presenca;
+	}
 
-	private boolean presenca;
+
 	
 	public Aula(){
 		
